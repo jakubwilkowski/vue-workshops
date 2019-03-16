@@ -1,17 +1,43 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Home</h1>
+    <BaseButton
+      display-text="Set Admin"
+      disabled="true"
+      @myEvent="setAdmin()"
+    ></BaseButton>
+    <BaseButton
+      display-text="Unset Admin"
+      :isLoading="isLoading"
+      @myEvent="unsetAdmin()"
+    ></BaseButton>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import BaseButton from '@/components/BaseComponents/BaseButton.vue'
 
 export default {
   name: 'Home',
+  data () {
+    return {
+      isLoading: false
+    }
+  },
   components: {
-    HelloWorld
+    BaseButton
+  },
+  methods: {
+    setAdmin () {
+      console.log('set')
+      localStorage.setItem('isAdmin', 'true')
+    },
+    unsetAdmin () {
+      this.isLoading = !this.isLoading
+      console.log('unset')
+      localStorage.setItem('isAdmin', 'false')
+    }
   }
 }
 </script>
