@@ -4,8 +4,14 @@
       <router-link to="/">
         Home
       </router-link> |
-      <router-link to="/about">
-        About
+      <router-link to="/score">
+        Score
+      </router-link> |
+      <router-link to="/settings">
+        Settings
+      </router-link> |
+      <router-link to="/Vote">
+        Vote
       </router-link>
     </div>
     <router-view />
