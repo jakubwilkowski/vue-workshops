@@ -4,7 +4,6 @@
     @click="clickAction"
   >
     <slot>
-      {{ displayText }}
     </slot>
   </button>
 </template>
@@ -13,10 +12,6 @@
 export default {
   name: 'BaseButton',
   props: {
-    displayText: {
-      type: String,
-      required: true
-    },
     isLoading: {
       type: Boolean,
       required: false,

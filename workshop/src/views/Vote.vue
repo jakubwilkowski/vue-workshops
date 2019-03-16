@@ -6,11 +6,13 @@
     >
     </BaseInput>
     <h4>{{ inputValue }}</h4>
+    <VoteOptions></VoteOptions>
   </div>
 </template>
 
 <script>
 import BaseInput from '@/components/BaseComponents/BaseInput.vue'
+import VoteOptions from '@/components/VoteOptions.vue'
 
 export default {
   name: 'Vote',
@@ -20,7 +22,8 @@ export default {
     }
   },
   components: {
-    BaseInput
+    BaseInput,
+    VoteOptions,
   }
 }
 </script>
