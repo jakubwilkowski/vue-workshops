@@ -19,6 +19,7 @@ export default {
       required: true
     },
     backgroundColor: {
+      type: String,
       required: false
     }
   },
