@@ -1,22 +1,30 @@
 const initialState = () => ({
-  userId: null
+  userId: null,
+  isAdmin: true
 })
 
-const state = initialState;
+const state = initialState
 
 const getters = {
-  userId: store => store.userId
+  userId: store => store.userId,
+  isAdmin: store => store.isAdmin
 }
 
 const mutations = {
-  SET_USERID(store) {
+  SET_USERID (store) {
     store.userId = (Math.floor(Math.random() * 1000)).toString()
+  },
+  SET_ADMIN (store, value) {
+    store.isAdmin = value
   }
 }
 
 const actions = {
-  async setUserId (context) {
+  setUserId (context) {
     context.commit('SET_USERID')
+  },
+  setIsAdmin (context, payload) {
+    context.commit('SET_ADMIN', payload)
   }
 }
 
