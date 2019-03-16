@@ -2,15 +2,17 @@
   <div class="home">
     <h1>Home</h1>
     <BaseButton
-      display-text="Set Admin"
       disabled="true"
       @myEvent="setAdmin()"
-    ></BaseButton>
+    >
+      Set Admin
+    </BaseButton>
     <BaseButton
-      display-text="Unset Admin"
       :isLoading="isLoading"
       @myEvent="unsetAdmin()"
-    ></BaseButton>
+    >
+      Unset Admin
+    </BaseButton>
   </div>
 </template>
 
@@ -37,6 +39,7 @@ export default {
       this.isLoading = !this.isLoading
       console.log('unset')
       localStorage.setItem('isAdmin', 'false')
+      setTimeout(() => { this.isLoading = !this.isLoading }, 1000)
     }
   }
 }

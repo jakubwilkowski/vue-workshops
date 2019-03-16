@@ -3,7 +3,9 @@
     :disabled="isDisabled"
     @click="clickAction"
   >
-    {{ displayText }}
+    <slot>
+      {{ displayText }}
+    </slot>
   </button>
 </template>
 
